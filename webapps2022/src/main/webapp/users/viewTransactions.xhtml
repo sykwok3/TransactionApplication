@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>View Transactions</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="View Transactions"/>
+        <br/>
+        User Name: <h:outputText id="full_name" title="Full Name" value="#{transactionBean.getCurrentUserName()}"/>
+        <br/>
+        User Currency: <h:outputText value="#{transactionBean.getCurrency()}"/>
+        <br/>
+        Balance: <h:outputText id="comment" title="Comment" value="#{transactionBean.getBalance()}"/>
+        <br/>
+        Current User: <h:outputText value="#{transactionBean.getCurrentUserName()}"/>     
+        <br/>
+        <h:dataTable value="#{transactionBean.recordList}" var="TransactionRecord">
+            <h:column>    				
+                <f:facet name="header">From User</f:facet>    				
+                    #{TransactionRecord.fromUser}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Sender Currency</f:facet>
+                    #{TransactionRecord.fromUserCurrency}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">To User</f:facet>
+                    #{TransactionRecord.toUser}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Recipient Currency</f:facet>
+                    #{TransactionRecord.toUserCurrency}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Amount</f:facet>
+                    #{TransactionRecord.amount}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Date</f:facet>
+                    #{TransactionRecord.dateTime}
+            </h:column>
+        </h:dataTable>
+
+
+        <br/>
+        <h:link value="Back to menu" outcome="user"/>
+    </h:body>
+</html>
+

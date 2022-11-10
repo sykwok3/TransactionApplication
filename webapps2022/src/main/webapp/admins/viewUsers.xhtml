@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>All Users</title>
+    </h:head>
+    <h:body>
+        <br/>
+        <h:dataTable value="#{transactionBean.allUsersAdmin}" var="UserList">
+            <h:column>    				
+                <f:facet name="header">User Name </f:facet>    				
+                    #{UserList.username}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Name  </f:facet>
+                    #{UserList.name}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Surname  </f:facet>
+                    #{UserList.surname}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Currency  </f:facet>
+                    #{UserList.currency}
+            </h:column>
+            <br/>
+            <h:column>
+                <f:facet name="header">Balance  </f:facet>
+                    #{UserList.balance}
+            </h:column>
+        </h:dataTable>
+
+        <h:link value="Back to admin" outcome="admin"/>
+    </h:body>
+</html>
+

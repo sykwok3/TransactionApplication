@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Request Payments</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Request Payments"/>
+        <br/>
+
+        <h:form id="request_payment_form">
+            Username: <h:inputText value="#{requestBean.requestFromUsername}" size="80">
+                <f:validateRequired/>
+            </h:inputText>
+            <br/>
+            Amount: <h:inputText value="#{requestBean.requestAmount}" size="80">
+                <f:validateRequired/>
+            </h:inputText>
+
+            <br/>
+            <h:commandButton id="submit_form" title="Submit Form" label="Submit Form" type="submit" value="Submit Form" action="#{requestBean.insertNotification()}" />
+            <h:commandButton id="reset_form" title="Reset Form" label="Reset Form" type="reset" value="Reset Form" />
+        </h:form>
+
+        <br/>
+        <h:link value="Back to menu" outcome="user"/>
+
+
+
+
+    </h:body>
+</html>
+

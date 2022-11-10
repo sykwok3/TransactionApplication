@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Menu</title>
+    </h:head>
+    <h:body>
+        Current User: <h:outputText value="#{transactionBean.getCurrentUserName()}"/>
+        <br/>
+        <h:link value="View notifications" outcome="viewNotifications"/>
+        <br/>
+        <h:link value="View transactions" outcome="viewTransactions"/>
+        <br/>
+        <h:link value="Make payment" outcome="makePayment"/>
+        <br/>
+        <h:link value="Request payment" outcome="requestPayment"/>
+        <br/>
+        <h:link value="Back to index" outcome="index"/>
+        <br/>
+        <h:form>
+            <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+    </h:body>
+</html>
+

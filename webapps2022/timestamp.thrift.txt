@@ -1,0 +1,5 @@
+namespace java timestamp
+service TimeStampService
+{
+   i64 getTimeStamp()
+}
